@@ -16,8 +16,11 @@ export class UsersService {
 
   async findOne(username: string): Promise<any> {
    
-    return this.UserRepository.find({
-      where:{Usuario : username}});
+    return this.UserRepository.createQueryBuilder()
+    .where({user: username})
+    .getOne();
+   /* return this.UserRepository.find({
+      where:{Usuario : username}}); */
   }
  
 }
