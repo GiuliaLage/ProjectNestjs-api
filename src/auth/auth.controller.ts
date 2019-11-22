@@ -8,20 +8,19 @@ import {AuthService} from './auth.service';
 export class AuthController {
     constructor(private readonly AuthService : AuthService){}
     
- /*   @Post('auth')
+   @Post('auth')
   public Auth(@Request() req)
   {     
       return this.AuthService.validateUser(req.username , req.password); 
   }
 
-  */
 
- @Post('auth')
+ /*@Post('auth')
  public Auth(@Query('id') username , password)
  {     
      return this.AuthService.validateUser(username, password); 
  }
- 
+ */
 
   @UseGuards(AuthGuard('local'))
   @Post('auth/login')
