@@ -14,11 +14,10 @@ export class UsersService {
 
  
 
-  async findOne(username: string): Promise<User[] | undefined> {
-    
-    return //aqui vai a query para buscar o usuario pelo username 
+  async findOne(username: string): Promise<any> {
+   
+    return this.UserRepository.find({
+      where:{Usuario : username}});
   }
-
-
-  
+ 
 }
